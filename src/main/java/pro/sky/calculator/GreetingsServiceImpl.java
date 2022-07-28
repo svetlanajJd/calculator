@@ -10,27 +10,30 @@ public class GreetingsServiceImpl implements GreetingsService {
         return "Добро пожаловать в калькулятор";
     }
 
-    public String answerPlus(int num1, int num2) {
+    public int answerPlus(int num1, int num2) {
         int sum = num1 + num2;
-        return num1 + "+" + num2 + "=" + sum;
+        return sum;
+        //изменено возвращаемое значение (return num1 + "+" + num2 + "=" + sum);
     }
 
-    public String answerMinus(int num1, int num2) {
+    public int answerMinus(int num1, int num2) {
         int dif = num1 - num2;
-        return num1 + "-" + num2 + "=" + dif;
+        return dif;
+        //изменено возвращаемое значение (return num1 + "-" + num2 + "=" + dif);
     }
 
-    public String answerMultiply(int num1, int num2) {
+    public int answerMultiply(int num1, int num2) {
         int prod = num1 * num2;
-        return num1 + "*" + num2 + "=" + prod;
+        return prod;
+        //изменено возвращаемое значение  (return num1 + "*" + num2 + "=" + prod);
     }
 
-        public String answerDivide(int num1, int num2) {
+    public int answerDivide(int num1, int num2) {
         if (num2 != 0) {
             int del = num1 / num2;
-            return num1 + "/" + num2 + "=" + del;
+            return del;
+            //изменено возвращаемое значение (num1 + "/" + num2 + "=" + del);
         }
-        String er = "Ошибка! делить на 0 нельзя";
-        return er;
+        throw new IllegalArgumentException("argument are null");
     }
 }
